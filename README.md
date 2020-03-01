@@ -18,6 +18,8 @@ This app will consist of a single screen with game board and nav links to the Gi
 
 ## Implementation Timeline 
 
-Day1: render triangle representing the character with ability to jump and move left and right, adjust gravity.
-Day2: draw background tower and pegs that player can jump on to move up. Implement game restart upon falling down. Add moving birds and collisions.
-Day3: add sprite animations, lvl completion upon reaching to the top, sound effects.
+* Day1: render triangle representing the character with ability to jump and move left and right, adjust gravity.
+
+* Day2: draw background tower and pegs that player can jump on to move up. Implement game restart upon falling down. Add moving birds and collisions.
+
+* Day3: add sprite animations, lvl completion upon reaching to the top, sound effects.
