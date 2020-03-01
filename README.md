@@ -1,15 +1,15 @@
 ## Background
 
-Connect Light is a platform game, where player have to dodge obstacles and jump up the tower from peg to peg to reach the top and illuminate the city. 
+Connect Light is a platform game, where the player has to dodge obstacles and jump up the tower from peg to peg to reach the top and illuminate the city. 
 
 ## Functionality & MVP
 * Start, pause and restart the game.
-* Jump over from one peg to another, making your way to the tower top.
-* Avoid randomly-generated flying from all directions birds.
+* Jump from one peg to another, making your way to the tower top.
+* Avoid randomly-generated birds, flying from all directions.
 * Game ends upon running into the bird or falling down the tower or successfully reaching the top.
 
 * In addition, this project will include: 
-  * An About modal describing the background and rules of the game
+  * A How to play modal describing the background and rules of the game
   * A production README
   
  ## Wireframes
