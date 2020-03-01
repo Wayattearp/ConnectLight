@@ -14,7 +14,9 @@ Connect Light is a platform game, where player have to dodge obstacles and jump 
   
  ## Wireframes
  
-This app will consist of a single screen with game board and nav links to the Github, my LinkedIn, and the About modal.
+This app will consist of a single screen with game board and nav links to the Github, my LinkedIn, and the How to play modal.
+
+![](/src/images/schema.png)
 
 ## Implementation Timeline 
 
