@@ -1,31 +1,99 @@
 import "./styles/index.scss";
-import Climber from "./climber";
+import climber from "./climber";
 
-let canvas = document.getElementById("gameScreen");
-let ctx = canvas.getContext("2d");
+var context, controller, loop;
 
-const GAME_WIDTH = 800;
-const GAME_HEIGHT = 600;
-
-ctx.clearRect(0, 0, 800, 600);
-
-let climber = new Climber(GAME_WIDTH, GAME_HEIGHT);
-
-climber.draw(ctx);
-
-// let lastTime = 0;
+context = document.getElementById("gameScreen").getContext("2d");
 
 
-// function gameLoop(timestamp) {
-//     let deltaTime = timestamp - lastTime;
-//     lastTime = timestamp;
+controller = {
 
-//     ctx.clearRect(0, 0, 800, 600);
-//     climber.update(deltaTime);
-//     climber.draw(ctx);
+    left: false,
+    right: false,
+    up: false,
+    keyListener: function (event) {
 
-//     requestAnimationFrame(gameLoop);
-//     // climber.update();
-// }
+        var key_state = (event.type == "keydown") ? true : false;
 
-// gameLoop();
+        switch (event.keyCode) {
+
+            case 37:// left key
+                controller.left = key_state;
+                break;
+            case 38:// up key
+                controller.up = key_state;
+                break;
+            case 39:// right key
+                controller.right = key_state;
+                break;
+
+        }
+
+    }
+
+};
+
+loop = function () {
+
+    if (controller.up && climber.jumping == false) {
+
+        climber.y_velocity -= 20;
+        climber.jumping = true;
+
+    }
+
+    if (controller.left) {
+
+        climber.x_velocity -= 0.5;
+
+    }
+
+    if (controller.right) {
+
+        climber.x_velocity += 0.5;
+
+    }
+
+    climber.y_velocity += 1.5;// gravity
+    climber.x += climber.x_velocity;
+    climber.y += climber.y_velocity;
+    climber.x_velocity *= 0.9;// friction
+    climber.y_velocity *= 0.9;// friction
+
+    // if climber is falling below floor line
+    if (climber.y > 600 - 16 - 42) {
+
+        climber.jumping = false;
+        climber.y = 600 - 16 - 42;
+        climber.y_velocity = 0;
+
+    }
+
+    // if climber is going off the left of the screen
+    if (climber.x < 0) {
+
+        climber.x = 0;
+
+    } else if (climber.x > 770) {// if climber goes past right
+
+        climber.x = 770;
+
+    }
+
+    context.fillStyle = "#202020";
+    context.fillRect(0, 0, 800, 600);// x, y, width, height
+    context.fillStyle = "#0f0";
+    context.beginPath();
+    context.rect(climber.x, climber.y, climber.width, climber.height);
+    context.fill();
+    context.strokeStyle = "#202830";
+
+
+    // call update when the browser is ready to draw again
+    window.requestAnimationFrame(loop);
+
+};
+
+window.addEventListener("keydown", controller.keyListener)
+window.addEventListener("keyup", controller.keyListener);
+window.requestAnimationFrame(loop);
