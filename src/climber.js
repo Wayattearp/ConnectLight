@@ -20,9 +20,6 @@ export default class Climber {
 
 }
 
-// let climber = new Climber;
-// window.addEventListener("keydown", climber.controller.keyListener)
-// window.addEventListener("keyup", climber.controller.keyListener);
 
 
 
