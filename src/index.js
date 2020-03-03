@@ -1,6 +1,7 @@
 import "./styles/index.scss";
 import Climber from "./climber";
 import ConnectLight from "./game";
+import Background from "./background";
 
 // var controller, loop ;
 // const canvas = document.getElementById("gameScreen");
@@ -9,8 +10,6 @@ import ConnectLight from "./game";
 var context, controller, loop, canvas;
 canvas = document.getElementById("gameScreen")
 context = canvas.getContext("2d");
-
-
 
 controller = {
 
@@ -26,7 +25,7 @@ controller = {
             case 37:// left key
                 controller.left = key_state;
                 break;
-            case 38:// up key
+            case 32:// space key
                 controller.up = key_state;
                 break;
             case 39:// right key
@@ -68,29 +67,27 @@ loop = function () {
     climber.y_velocity *= 0.9;// friction
 
     // if climber is falling below floor line
-    if (climber.y > 515) {
+    if (climber.y > 815) {
 
         climber.jumping = false;
-        climber.y = 515;
+        climber.y = 815;
         climber.y_velocity = 0;
 
     }
 
     // if climber is going off the left of the screen
-    if (climber.x < 0) {
+    if (climber.x < -20) {
 
-        climber.x = 0;
+        climber.x = -20;
 
-    } else if (climber.x > 770) {// if climber goes past right
+    } else if (climber.x > 740) {// if climber goes past right
 
-        climber.x = 770;
+        climber.x = 740;
 
     }
 
-    context.fillStyle = "#202020";
-    context.fillRect(0, 0, 800, 600);// x, y, width, height
-    context.fillStyle = "#0f0";
-
+    let background = new Background;
+    background.drawBackground(context);
     climber.drawClimber(context);
     // call update when the browser is ready to draw again
     window.requestAnimationFrame(loop);
