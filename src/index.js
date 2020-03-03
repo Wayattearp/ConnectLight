@@ -61,10 +61,10 @@ loop = function () {
     climber.y_velocity *= 0.9;// friction
 
     // if climber is falling below floor line
-    if (climber.y > 600 - 16 - 42) {
+    if (climber.y > 555) {
 
         climber.jumping = false;
-        climber.y = 600 - 16 - 42;
+        climber.y = 555;
         climber.y_velocity = 0;
 
     }
@@ -80,15 +80,19 @@ loop = function () {
 
     }
 
+
+    // function drawPlayer() {
+    //     const climberImage = new Image();
+    //     climberImage.src = "./src/images/climber.png";
+    //     context.drawImage(climberImage, climber.x, climber.y, climber.w, climber.h);
+    // }
+
     context.fillStyle = "#202020";
     context.fillRect(0, 0, 800, 600);// x, y, width, height
     context.fillStyle = "#0f0";
-    context.beginPath();
-    context.rect(climber.x, climber.y, climber.width, climber.height);
-    context.fill();
-    context.strokeStyle = "#202830";
-
-
+    const climberImage = new Image();
+    climberImage.src = "./src/images/craftpix-991117-free-fallen-angel-chibi-2d-game-sprites/Fallen_Angels_2/PNG/PNG Sequences/Walking/0_Fallen_Angels_Walking_000.png";
+    context.drawImage(climberImage, climber.x, climber.y, climber.width, climber.height);
     // call update when the browser is ready to draw again
     window.requestAnimationFrame(loop);
 

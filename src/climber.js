@@ -2,8 +2,8 @@ var climber;
 
     climber =  { 
     height: 42,
-    jumping: true,
     width: 32,
+    jumping: true,
     x: 144, 
     x_velocity: 0,
     y: 0,
