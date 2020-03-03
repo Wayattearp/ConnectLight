@@ -1,5 +1,5 @@
 import "./styles/index.scss";
-import climber from "./climber";
+import Climber from "./climber";
 
 var context, controller, loop;
 
@@ -33,6 +33,7 @@ controller = {
 
 };
 
+let climber = new Climber;
 loop = function () {
 
     if (controller.up && climber.jumping == false) {
@@ -61,10 +62,10 @@ loop = function () {
     climber.y_velocity *= 0.9;// friction
 
     // if climber is falling below floor line
-    if (climber.y > 555) {
+    if (climber.y > 515) {
 
         climber.jumping = false;
-        climber.y = 555;
+        climber.y = 515;
         climber.y_velocity = 0;
 
     }
