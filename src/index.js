@@ -1,9 +1,15 @@
 import "./styles/index.scss";
 import Climber from "./climber";
+import ConnectLight from "./game";
 
-var context, controller, loop;
+// var controller, loop ;
+// const canvas = document.getElementById("gameScreen");
+// let game = new ConnectLight(canvas)
 
-context = document.getElementById("gameScreen").getContext("2d");
+var context, controller, loop, canvas;
+canvas = document.getElementById("gameScreen")
+context = canvas.getContext("2d");
+
 
 
 controller = {
@@ -81,23 +87,16 @@ loop = function () {
 
     }
 
-
-    // function drawPlayer() {
-    //     const climberImage = new Image();
-    //     climberImage.src = "./src/images/climber.png";
-    //     context.drawImage(climberImage, climber.x, climber.y, climber.w, climber.h);
-    // }
-
     context.fillStyle = "#202020";
     context.fillRect(0, 0, 800, 600);// x, y, width, height
     context.fillStyle = "#0f0";
-    const climberImage = new Image();
-    climberImage.src = "./src/images/craftpix-991117-free-fallen-angel-chibi-2d-game-sprites/Fallen_Angels_2/PNG/PNG Sequences/Walking/0_Fallen_Angels_Walking_000.png";
-    context.drawImage(climberImage, climber.x, climber.y, climber.width, climber.height);
+
+    climber.drawClimber(context);
     // call update when the browser is ready to draw again
     window.requestAnimationFrame(loop);
 
 };
+
 
 window.addEventListener("keydown", controller.keyListener)
 window.addEventListener("keyup", controller.keyListener);
