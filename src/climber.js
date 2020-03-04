@@ -1,3 +1,5 @@
+import Controller from './controller';
+
 export default class Climber {
     constructor() {
         this.height = 92,
@@ -16,6 +18,41 @@ export default class Climber {
         climberImage.src = "./src/images/craftpix-991117-free-fallen-angel-chibi-2d-game-sprites/Fallen_Angels_2/PNG/PNG Sequences/Walking/0_Fallen_Angels_Walking_000.png";
         context.drawImage(climberImage, this.x, this.y, this.width, this.height);
 
+    }
+
+
+    handleMoves() {
+        if (Controller.up && this.jumping == false) {
+            this.y_velocity -= 20;
+            this.jumping = true;
+
+        }
+
+        if (Controller.left) {
+            this.x_velocity -= 0.5;
+
+        }
+
+        if (Controller.right) {
+            this.x_velocity += 0.5;
+        }
+
+        if (this.y > 805) {
+            this.jumping = false;
+            this.y = 805;
+            // this.y_velocity = 0;
+            // if climber is falling below floor line
+        }
+
+        // if this is going off the left of the screen
+        if (this.x < -20) {
+            this.x = -20;
+
+        } else if (this.x > 740) {// if this goes past right
+            this.x = 740;
+
+        }
+        
     }
 
 }
