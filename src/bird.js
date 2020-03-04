@@ -15,4 +15,11 @@ export default class Bird {
         context.drawImage(bird1, this.x, this.y, this.width, this.height);
         
     }
+
+    // birdMoves() {
+
+    //     bird1.x += 0.75;
+    //     bird2.y += 1, bird2.x += 3;
+    //     bird3.y += 2, bird3.x += 0.25;
+    // }
 }

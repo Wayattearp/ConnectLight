@@ -20,7 +20,6 @@ export default class Climber {
 
     }
 
-
     handleMoves() {
         if (Controller.up && this.jumping == false) {
             this.y_velocity -= 20;
@@ -40,18 +39,24 @@ export default class Climber {
         if (this.y > 805) {
             this.jumping = false;
             this.y = 805;
-            // this.y_velocity = 0;
+            // climber.y_velocity = 0;
             // if climber is falling below floor line
         }
 
-        // if this is going off the left of the screen
+        // if climber is going off the left of the screen
         if (this.x < -20) {
             this.x = -20;
 
-        } else if (this.x > 740) {// if this goes past right
+        } else if (this.x > 740) {// if climber goes past right
             this.x = 740;
 
         }
+
+        this.y_velocity += 1.5;// gravity
+        this.x += this.x_velocity;
+        this.y += this.y_velocity;
+        this.x_velocity *= 0.9;// friction
+        this.y_velocity *= 0.9;// friction
         
     }
 

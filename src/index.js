@@ -1,6 +1,5 @@
 import "./styles/index.scss";
 import Climber from "./climber";
-// import ConnectLight from "./game";
 import Background from "./background";
 import Bird from "./bird";
 import Controller from './controller';
@@ -17,11 +16,7 @@ let bird3 = new Bird;
 
 loop = function () {
     climber.handleMoves();
-    climber.y_velocity += 1.5;// gravity
-    climber.x += climber.x_velocity;
-    climber.y += climber.y_velocity;
-    climber.x_velocity *= 0.9;// friction
-    climber.y_velocity *= 0.9;// friction
+
     bird1.x += 0.75;
     bird2.y += 1, bird2.x += 3;
     bird3.y +=2, bird3.x +=0.25;
@@ -32,8 +27,6 @@ loop = function () {
         (climber.y + 30) + (climber.height + 30) > bird3.y) {
         alert("collision");
     }
-
-    
 
     let background = new Background;
     background.drawBackground(context);
