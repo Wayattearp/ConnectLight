@@ -1,25 +1,52 @@
+
+
 export default class Bird {
-    constructor() {
+    constructor(climber) {
         this.height = 42,
             this.width = 42,
-            this.x = 144,
-            this.x_velocity = 0,
-            this.y = 400,
-            this.y_velocity = 5
+            this.x = this.getRandomInt(-400, -50),
+            this.y = this.getRandomInt(80, 750),
+            this.x_velocity = this.getRandomArbitrary(0.5, 2.2),
+            // this.y_velocity = 0
+            this.birdImage = new Image(),
+            this.birdImage.src = "./src/images/bird/frame-1.png"
 
+    }       
+
+    handleCollisions(climber) {
+        if ((climber.x) < this.x + this.width - 5 &&
+            (climber.x) + (climber.width - 12) > this.x &&
+            (climber.y) < this.y + this.height - 25 &&
+            (climber.y) + (climber.height ) > this.y + 20) { //bottom
+                // alert("Collision")
+            // climber.x = 300, climber.y = 700, climber.y_velocity = 0;
+        }
     }
 
     drawBird(context) {
-        const bird1 = new Image();
-        bird1.src = "./src/images/bird/frame-1.png";
-        context.drawImage(bird1, this.x, this.y, this.width, this.height);
+        context.drawImage(this.birdImage, this.x, this.y, this.width, this.height);
         
     }
 
-    // birdMoves() {
+    getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
+    }
 
-    //     bird1.x += 0.75;
-    //     bird2.y += 1, bird2.x += 3;
-    //     bird3.y += 2, bird3.x += 0.25;
-    // }
-}
+    getRandomArbitrary(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    handleFlight() {
+        if (this.x < -100) {
+            this.x_velocity = this.getRandomArbitrary(0.5, 2.2)
+            this.birdImage.src = "./src/images/bird/frame-1.png"
+
+        } else if (this.x > 840) {// if climber goes past right
+            this.x_velocity = this.getRandomArbitrary(-0.5, -2.2)
+            this.birdImage.src = "./src/images/bird/frame-1_flipped.png"
+        }
+        this.x += this.x_velocity
+        }
+    }
