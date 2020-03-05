@@ -18,9 +18,6 @@ export default class Background {
         const tower_base = new Image();
         tower_base.src = "./src/images/tower_base.png";
         context.drawImage(tower, 385, -35)
-        const tower_peg = new Image();
-        tower_peg.src = "./src/images/right_peg.png";
-        context.drawImage(tower_peg, 480, 720)
         const rock = new Image();
         rock.src = "./src/images/rock.png";
         context.drawImage(rock, 360, 805, 90, 90)

@@ -8,7 +8,7 @@ export default class Climber {
             this.x = 344,
             this.x_velocity = 0,
             this.y = 720,
-            this.y_velocity = 0
+            this.y_velocity = 0,
             this.climberImage = new Image();
             this.climberImage.src = "./src/images/climber.png";
 
@@ -22,7 +22,7 @@ export default class Climber {
 
     handleMoves() {
         if (Controller.up && this.jumping == false) {
-            this.y_velocity -= 16;
+            this.y_velocity -= 26;
             this.jumping = true;
 
         }
@@ -41,7 +41,7 @@ export default class Climber {
         if (this.y > 825) {
             this.jumping = false;
             this.y = 825;
-            // climber.y_velocity = 0;
+            // this.y_velocity = 0;
             // if climber is falling below floor line
         }
 

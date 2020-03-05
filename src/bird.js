@@ -5,7 +5,7 @@ export default class Bird {
         this.height = 42,
             this.width = 42,
             this.x = this.getRandomInt(-400, -50),
-            this.y = this.getRandomInt(80, 750),
+            this.y = this.getRandomInt(20, 750),
             this.x_velocity = this.getRandomArbitrary(0.5, 2.2),
             // this.y_velocity = 0
             this.birdImage = new Image(),
@@ -18,13 +18,15 @@ export default class Bird {
             (climber.x) + (climber.width - 12) > this.x &&
             (climber.y) < this.y + this.height - 25 &&
             (climber.y) + (climber.height ) > this.y + 20) { //bottom
-                // alert("Collision")
+                (climber.x += this.x)
+                // alert("Game Over")
             // climber.x = 300, climber.y = 700, climber.y_velocity = 0;
         }
     }
 
     drawBird(context) {
-        context.drawImage(this.birdImage, this.x, this.y, this.width, this.height);
+        context.drawImage(this.birdImage, this.x, this.y, this.width, this.height
+            );
         
     }
 
@@ -40,13 +42,23 @@ export default class Bird {
 
     handleFlight() {
         if (this.x < -100) {
-            this.x_velocity = this.getRandomArbitrary(0.5, 2.2)
+            this.x_velocity = this.getRandomArbitrary(0.95, 3.2)
+            this.y = this.getRandomInt(20, 750)
             this.birdImage.src = "./src/images/bird/frame-1.png"
 
         } else if (this.x > 840) {// if climber goes past right
-            this.x_velocity = this.getRandomArbitrary(-0.5, -2.2)
+            this.x_velocity = this.getRandomArbitrary(-0.95, -3.5)
+            this.y = this.getRandomInt(20, 750)
             this.birdImage.src = "./src/images/bird/frame-1_flipped.png"
         }
         this.x += this.x_velocity
         }
+
+    // populateBirds() {
+    //     let birds = [];
+    //     for (let i = 0; i < 10; i++) {
+    //         birds.push(`bird${i}` = new Bird)
+    //     }
+    //     return birds
+    // }
     }
