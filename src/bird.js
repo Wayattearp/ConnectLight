@@ -52,13 +52,15 @@ export default class Bird {
             this.birdImage.src = "./src/images/bird/frame-1_flipped.png"
         }
         this.x += this.x_velocity
-        }
-
-    // populateBirds() {
-    //     let birds = [];
-    //     for (let i = 0; i < 10; i++) {
-    //         birds.push(`bird${i}` = new Bird)
-    //     }
-    //     return birds
-    // }
     }
+
+    populateBirds() {
+         let birds = [];
+         let temp;
+        for (let i = 0; i < 10; i++) {
+            temp = "bird" + i;
+            birds.push(temp = new Bird);
+        }
+        return birds;
+    }
+}
