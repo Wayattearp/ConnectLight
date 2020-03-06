@@ -8,7 +8,7 @@ Connect Light is a platform game, where the player has to dodge obstacles and ju
 * Game ends upon successfully reaching the top.
 
 * In addition, this project will include: 
-  * A How to play modal describing the background and rules of the game
+  * A How to play describing the background and rules of the game
   ![](/src/images/About.png)
   
   * A production README
