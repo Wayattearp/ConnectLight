@@ -51,8 +51,8 @@ export default class Climber {
         if (this.x < -20) {
             this.x = -20;
 
-        } else if (this.x > 740) {// if climber goes past right
-            this.x = 740;
+        } else if (this.x > 960) {// if climber goes past right
+            this.x = 960;
 
         }
 
