@@ -12,7 +12,8 @@ export default class Climber {
             this.climberImage = new Image();
             this.climberImage.src = "./src/images/climber.png";
             this.jumpingSound = document.createElement("audio");
-            this.jumpingSound.src = "./src/sounds/jump.wav"
+            this.jumpingSound.src = "./src/sounds/jump.wav";
+            this.jumpingSound.volume = 0.5;
     }
     
 
@@ -23,7 +24,7 @@ export default class Climber {
 
     handleMoves() {
         if (Controller.up && this.jumping == false) {
-            this.y_velocity -= 20;
+            this.y_velocity -= 18;
             this.jumpingSound.play();
             this.jumping = true;
         }
@@ -39,9 +40,9 @@ export default class Climber {
             this.x_velocity += 0.5;
         }
 
-        if (this.y > 825) {
+        if (this.y > 805) {
             this.jumping = false;
-            this.y = 825;
+            this.y = 805;
             // this.y_velocity = 0;
             // if climber is falling below floor line
         }
