@@ -28,7 +28,6 @@ let left_pegs = [peg1 = new Peg(climber, 380, 780), peg2 = new Peg(climber, 380,
 
 let lights = [leftLight = new Light(climber, 355, 27)]
 
-// let right_pegs = peg.populateRightPegs();
 let bird = new Bird;
 let birds = bird.populateBirds();
 
@@ -36,12 +35,6 @@ loop = function () {
     background.drawBackground(context);
     background.drawTower(context);
 
-    // peg.pegPositionsRight().forEach((pos) =>
-    // peg.drawRightPeg(context, pos[0], pos[1])
-    // );
-    // peg.pegPositionsLeft().forEach((pos) =>
-    // peg.drawLeftPeg(context, pos[0], pos[1])
-    // );
     lights.forEach((light) =>
         light.drawLight(context, light.x, light.y))
     lights.forEach((light) =>

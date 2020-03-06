@@ -18,6 +18,9 @@ export default class Controller {
             case 32:// space key
                 Controller.up = key_state;
                 break;
+            case 38:// up key
+                Controller.up = key_state;
+                break;
             case 39:// right key
                 Controller.right = key_state;
                 break;

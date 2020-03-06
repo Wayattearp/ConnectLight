@@ -6,8 +6,7 @@ export default class Bird {
             this.width = 42,
             this.x = this.getRandomInt(-400, -50),
             this.y = this.getRandomInt(20, 750),
-            this.x_velocity = this.getRandomArbitrary(0.5, 2.2),
-            // this.y_velocity = 0
+            this.x_velocity = this.getRandomArbitrary(1, 2.2),
             this.birdImage = new Image(),
             this.birdImage.src = "./src/images/bird/frame-1.png",
             this.swift = document.createElement("audio");
@@ -23,7 +22,6 @@ export default class Bird {
                 this.swift.play();
                 this.x_velocity > 0 ? climber.x += this.x / 5 : climber.x -= this.x /5
                 // alert("Game Over")
-            // climber.x = 300, climber.y = 700, climber.y_velocity = 0;
         }
     }
 
@@ -45,12 +43,12 @@ export default class Bird {
 
     handleFlight() {
         if (this.x < -100) {
-            this.x_velocity = this.getRandomArbitrary(1.5, 3.2)
+            this.x_velocity = this.getRandomArbitrary(2.9, 4.2)
             this.y = this.getRandomInt(20, 750)
             this.birdImage.src = "./src/images/bird/frame-1.png"
 
-        } else if (this.x > 840) {// if climber goes past right
-            this.x_velocity = this.getRandomArbitrary(-1.5, -3.5)
+        } else if (this.x > 1040) {
+            this.x_velocity = this.getRandomArbitrary(-2.9, -4.5)
             this.y = this.getRandomInt(20, 750)
             this.birdImage.src = "./src/images/bird/frame-1_flipped.png"
         }

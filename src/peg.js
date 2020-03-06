@@ -3,7 +3,6 @@ export default class Peg {
         this.width = 55;
         this.height = 20;
         this.x = x;
-        // // this.y = this.getRandomInt(100, 700);
         this.y = y;
     }
 
@@ -20,12 +19,25 @@ export default class Peg {
         context.drawImage(pegImage, this.x = x, this.y = y, this.width, this.height
         );
     }
-
+    
     getRandomInt(min, max) {
         min = Math.ceil(min);
         max = Math.floor(max);
         return Math.floor(Math.random() * (max - min)) + min; //The maximum is exclusive and the minimum is inclusive
     }
+
+    handleCollisions(climber) {
+
+        if ((climber.x) < this.x + this.width - 5 &&
+            (climber.x) + (climber.width - 12) > this.x &&
+            (climber.y) < this.y + this.height - 25 &&
+            (climber.y) + (climber.height) > this.y + 10) { //bottom
+             climber.y_velocity = -1;
+             climber.jumping = false;
+        }
+
+    }
+}
 
     //  pegPositionsRight() {
     //     let peg_pos = [[480, 920]];
@@ -44,17 +56,6 @@ export default class Peg {
     //         return peg_pos
     // }
 
-    handleCollisions(climber) {
-
-        if ((climber.x) < this.x + this.width - 5 &&
-            (climber.x) + (climber.width - 12) > this.x &&
-            (climber.y) < this.y + this.height - 25 &&
-            (climber.y) + (climber.height) > this.y + 10) { //bottom
-             climber.y_velocity = -1;
-             climber.jumping = false;
-        }
-
-    }
 
     // populateRightPegs() {
     //     let pegs = [];
@@ -71,4 +72,3 @@ export default class Peg {
     //     return pegs;
     // }
 
-}
