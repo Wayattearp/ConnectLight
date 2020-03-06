@@ -22,7 +22,7 @@ export default class Climber {
 
     handleMoves() {
         if (Controller.up && this.jumping == false) {
-            this.y_velocity -= 26;
+            this.y_velocity -= 12;
             this.jumping = true;
 
         }
