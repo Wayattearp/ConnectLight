@@ -57,7 +57,7 @@ export default class Bird {
     populateBirds() {
          let birds = [];
          let temp;
-        for (let i = 0; i < 10; i++) {
+        for (let i = 0; i < 15; i++) {
             temp = "bird" + i;
             birds.push(temp = new Bird);
         }
