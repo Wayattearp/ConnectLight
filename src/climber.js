@@ -11,7 +11,8 @@ export default class Climber {
             this.y_velocity = 0,
             this.climberImage = new Image();
             this.climberImage.src = "./src/images/climber.png";
-
+            this.jumpingSound = document.createElement("audio");
+            this.jumpingSound.src = "./src/sounds/jump.wav"
     }
     
 
@@ -22,9 +23,9 @@ export default class Climber {
 
     handleMoves() {
         if (Controller.up && this.jumping == false) {
-            this.y_velocity -= 12;
+            this.y_velocity -= 13;
+            this.jumpingSound.play();
             this.jumping = true;
-
         }
 
         if (Controller.left) {

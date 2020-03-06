@@ -9,7 +9,9 @@ export default class Bird {
             this.x_velocity = this.getRandomArbitrary(0.5, 2.2),
             // this.y_velocity = 0
             this.birdImage = new Image(),
-            this.birdImage.src = "./src/images/bird/frame-1.png"
+            this.birdImage.src = "./src/images/bird/frame-1.png",
+            this.swift = document.createElement("audio");
+            this.swift.src = "./src/sounds/swift.ogg"
 
     }       
 
@@ -18,6 +20,7 @@ export default class Bird {
             (climber.x) + (climber.width - 12) > this.x &&
             (climber.y) < this.y + this.height - 25 &&
             (climber.y) + (climber.height ) > this.y + 20) { //bottom
+                this.swift.play();
                 this.x_velocity > 0 ? climber.x += this.x / 5 : climber.x -= this.x /5
                 // alert("Game Over")
             // climber.x = 300, climber.y = 700, climber.y_velocity = 0;
