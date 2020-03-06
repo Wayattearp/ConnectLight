@@ -15,7 +15,7 @@ Connect Light is a platform game, where the player has to dodge obstacles and ju
  
 This app will consist of a single screen with game board and nav links to the Github, my LinkedIn, and the How to play info popup.
 
-![](/src/images/schema.png)
+![](/src/images/light_on_show.gif)
 
 ## Implementation Timeline 
 
