@@ -47,7 +47,7 @@ time, mark, audio, video {
      width: 70%
   }
 
-  .mainInfo{
+  .mainInfo {
     margin-top: 12vw;
     margin-left: 8vw;
     max-width: 80%;
@@ -55,6 +55,7 @@ time, mark, audio, video {
 
   .play:hover + .howToPlay {
     display: block;
+    opacity: 0.8;
   }
 
   .play {
@@ -64,6 +65,48 @@ time, mark, audio, video {
     font-size: large;
     position: absolute;
     color: wheat;
+    border: 1px solid whitesmoke;
     top: 50%;
     right: 5%;
+    cursor: pointer;
+  }
+
+  .links{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 42%;
+    left: 5%;
+  }
+
+  .gitHub {
+    background-color: #4a797c;
+    border-radius: 8px;
+    padding: 6px;
+    height: 60px;
+    width: 60px;
+    margin-bottom: 20px;
+     border: 1px solid black;
+    
+  }
+
+  .linkedin {
+    margin-top: 10px;
+    border-radius: 8px;
+    padding: 6px;
+    height: 60px;
+    width: 60px;
+    background-color: #4a797c;
+    top: 50%;
+    border: 1px solid black;
+  }
+
+  .linkedin:hover {
+    opacity: 0.8;
+    border: 1px solid whitesmoke;
+  }
+
+  .gitHub:hover {
+    opacity: 0.8;
+    border: 1px solid whitesmoke; 
   }

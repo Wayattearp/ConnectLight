@@ -23,7 +23,7 @@ export default class Climber {
 
     handleMoves() {
         if (Controller.up && this.jumping == false) {
-            this.y_velocity -= 13;
+            this.y_velocity -= 20;
             this.jumpingSound.play();
             this.jumping = true;
         }
@@ -55,7 +55,7 @@ export default class Climber {
 
         }
 
-        this.y_velocity += 1.1;// gravity
+        this.y_velocity += 2.1;// gravity
         this.x += this.x_velocity;
         this.y += this.y_velocity;
         this.x_velocity *= 0.9;// friction

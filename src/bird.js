@@ -20,7 +20,7 @@ export default class Bird {
             (climber.y) < this.y + this.height - 25 &&
             (climber.y) + (climber.height ) > this.y + 20) { //bottom
                 this.swift.play();
-                this.x_velocity > 0 ? climber.x += this.x / 5 : climber.x -= this.x /5
+                this.x_velocity > 0 ? climber.x += 40 : climber.x -= 40
                 // alert("Game Over")
         }
     }
