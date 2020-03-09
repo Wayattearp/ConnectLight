@@ -1,4 +1,4 @@
-[live link] (https://wayattearp.github.io/ConnectLight/)
+https://wayattearp.github.io/ConnectLight/
 
 ## Background
 
