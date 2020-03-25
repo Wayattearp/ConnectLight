@@ -33,18 +33,18 @@ time, mark, audio, video {
     background: #12273b;
   }
 
-  .howToPlay {
+  .cloud {
+    position: absolute;
     background-image: url("https://www.nicepng.com/png/full/1-14985_small-single-cloud-transparent-background-cloud-png.png"), ;
     color: #16113b;
     font-size: large;
     font-weight: 600;
-    position: absolute;
     display: none;
-    left: 14vw;
+    left: 13vw;
     top: 10vw;
     background-size: cover;
      height: 50%;
-     width: 70%
+     width: 70%;
   }
 
   .mainInfo {
@@ -53,40 +53,44 @@ time, mark, audio, video {
     max-width: 80%;
   }
 
-  .play:hover + .howToPlay {
+  .play:hover + .cloud {
     display: block;
     opacity: 0.8;
+    
   }
 
   .play {
+    align-self: center;
+    margin: 5% 4.5% 4.5% 2%;
     border-radius: 10px;
     padding: 10px;
     background: #16113b;
     font-size: large;
-    position: absolute;
     color: wheat;
     border: 1px solid whitesmoke;
-    top: 50%;
-    right: 5%;
     cursor: pointer;
   }
 
+  .play:hover {
+    color: rgb(246, 250, 20);
+    text-shadow: 1px 1px 5px rgb(246, 250, 20);
+    transition: all 2s ease;
+  }
+
   .links{
-    position: absolute;
     display: flex;
     flex-direction: column;
-    top: 42%;
-    left: 5%;
+    margin: 25% 2% 4.5% 4.5%;
   }
 
   .gitHub {
-    background-color: #4a797c;
+    background-color: #4a9297;
     border-radius: 8px;
     padding: 6px;
     height: 60px;
     width: 60px;
     margin-bottom: 20px;
-     border: 1px solid black;
+    border: 1px solid #16113b;
     
   }
 
@@ -96,17 +100,26 @@ time, mark, audio, video {
     padding: 6px;
     height: 60px;
     width: 60px;
-    background-color: #4a797c;
+    background-color: #4a9297;
     top: 50%;
-    border: 1px solid black;
+    border: 1px solid #16113b;
   }
 
   .linkedin:hover {
     opacity: 0.8;
     border: 1px solid whitesmoke;
+    transition: all 1s ease;
+    background: #91ebf1;
   }
 
   .gitHub:hover {
     opacity: 0.8;
     border: 1px solid whitesmoke; 
+    transition: all 1s ease;
+    background: #91ebf1;
+  }
+
+  .gamePage {
+    display: flex;
+    justify-content: space-between;
   }
