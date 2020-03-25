@@ -45,6 +45,7 @@ time, mark, audio, video {
     background-size: cover;
      height: 50%;
      width: 70%;
+     
   }
 
   .mainInfo {
@@ -56,6 +57,7 @@ time, mark, audio, video {
   .play:hover + .cloud {
     display: block;
     opacity: 0.8;
+    
     
   }
 
@@ -73,7 +75,7 @@ time, mark, audio, video {
 
   .play:hover {
     color: rgb(246, 250, 20);
-    text-shadow: 1px 1px 5px rgb(246, 250, 20);
+    text-shadow: 0px 0px 2px rgb(246, 250, 20);
     transition: all 2s ease;
   }
 
@@ -110,6 +112,7 @@ time, mark, audio, video {
     border: 1px solid whitesmoke;
     transition: all 1s ease;
     background: #91ebf1;
+    box-shadow: 0px 0px 5px #91ebf1;
   }
 
   .gitHub:hover {
@@ -117,6 +120,7 @@ time, mark, audio, video {
     border: 1px solid whitesmoke; 
     transition: all 1s ease;
     background: #91ebf1;
+    box-shadow: 0px 0px 5px #91ebf1;
   }
 
   .gamePage {
