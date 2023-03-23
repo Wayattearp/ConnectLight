@@ -13,7 +13,7 @@ export default class Climber {
             this.climberImage.src = "./src/images/climber.png";
             this.jumpingSound = document.createElement("audio");
             this.jumpingSound.src = "./src/sounds/jump.wav";
-            this.jumpingSound.volume = 0.5;
+            this.jumpingSound.volume = 0.2;
     }
     
 
@@ -40,9 +40,9 @@ export default class Climber {
             this.x_velocity += 0.5;
         }
 
-        if (this.y > 805) {
+        if (this.y > 820)  {
             this.jumping = false;
-            this.y = 805;
+            this.y = 820;
             // this.y_velocity = 0;
             // if climber is falling below floor line
         }
@@ -56,7 +56,7 @@ export default class Climber {
 
         }
 
-        this.y_velocity += 2.1;// gravity
+        this.y_velocity += 1;// gravity
         this.x += this.x_velocity;
         this.y += this.y_velocity;
         this.x_velocity *= 0.9;// friction
