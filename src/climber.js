@@ -24,7 +24,7 @@ export default class Climber {
 
     handleMoves() {
         if (Controller.up && this.jumping == false) {
-            this.y_velocity -= 18;
+            this.y_velocity -= 17;
             this.jumpingSound.play();
             this.jumping = true;
         }
