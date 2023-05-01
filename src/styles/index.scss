@@ -45,8 +45,6 @@ time, mark, audio, video {
     background-size: cover;
     height: 50%;
     width: 70%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
   }
 
   .mainInfo {
@@ -57,7 +55,8 @@ time, mark, audio, video {
 
   .play:hover, .cloud {
     display: block;
-    transition: opacity, 0.8, ease-in, 1s;
+    opacity: 0.8;
+    
     
   }
 
