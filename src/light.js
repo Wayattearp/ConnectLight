@@ -24,7 +24,7 @@ export default class Light {
             (climber.y) + (climber.height) > this.y + 10) {
             this.lightImage.src = "./src/images/light/light_on.png"
             this.lightSound.play();
-            // alert("Adamant Patience!")
+            alert("Adamant Patience!")
         }
 
     }
