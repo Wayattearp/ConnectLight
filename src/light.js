@@ -3,30 +3,28 @@ export default class Light {
         this.width = 200;
         this.height = 40;
         this.x = x;
-        this.y = y; 
+        this.y = y;
         this.lightImage = new Image();
         this.lightImage.src = "./src/images/light/light_off.png";
         this.lightSound = document.createElement("audio");
-        this.lightSound.src = "./src/sounds/on.wav"
+        this.lightSound.src = "./src/sounds/on.wav";
     }
 
-    drawLight(context, x, y) {
-       
-        context.drawImage(this.lightImage, this.x = x, this.y = y, this.width, this.height
-        );
+    drawLight(context) {
+        context.drawImage(this.lightImage, this.x, this.y, this.width, this.height);
     }
 
     handleCollisions(climber) {
-
-        if ((climber.x) < this.x + this.width - 5 &&
-            (climber.x) + (climber.width - 12) > this.x &&
-            (climber.y) < this.y + this.height - 25 &&
-            (climber.y) + (climber.height) > this.y + 10) {
-            this.lightImage.src = "./src/images/light/light_on.png"
+        const { x, width, y, height } = this;
+        if (
+            climber.x < x + width - 5 &&
+            climber.x + (climber.width - 12) > x &&
+            climber.y < y + height - 25 &&
+            climber.y + climber.height > y + 10
+        ) {
+            this.lightImage.src = "./src/images/light/light_on.png";
             this.lightSound.play();
-            alert("Adamant Patience!")
+            alert("Adamant Patience!");
         }
-
     }
-
 }
