@@ -136,7 +136,8 @@ body {
     font-size: large;
     color: wheat;
     border: 1px solid whitesmoke;
-    cursor: pointer
+    cursor: pointer;
+    text-align: center;
 }
 
 .play:hover {
