@@ -8,6 +8,17 @@
     <link rel="stylesheet" href="./dist/main.css" />
     <title>ConnectLight</title>
     <link rel="shortcut icon" type="image/png" href="./src/images/favicon.ico" />
+    <script>
+        window.addEventListener('DOMContentLoaded', function () {
+            setTimeout(function () {
+                var scrollHeight = document.documentElement.scrollHeight;
+                window.scroll({
+                    top: scrollHeight,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        });
+    </script>
 </head>
 
 <body>
