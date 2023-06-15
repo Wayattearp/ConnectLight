@@ -13,7 +13,8 @@ export default class Climber {
         this.climberImage.src = "./src/images/climber.png";
         this.jumpingSound = document.createElement("audio");
         this.jumpingSound.src = "./src/sounds/jump.wav";
-        this.jumpingSound.volume = 0.05;
+        this.jumpingSound.volume = 1;
+        this.jumpingSound.playbackRate = 2.5;
     }
 
     drawClimber(context) {
