@@ -27,6 +27,10 @@ export default class Climber {
             this.jumping = true;
         }
 
+        if (!Controller.up && this.jumping) {
+            this.jumping = false;
+        }
+
         if (Controller.left) {
             this.climberImage.src = "./src/images/climber-1_flipped.png";
             this.x_velocity -= 0.5;

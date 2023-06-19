@@ -23,13 +23,16 @@ export default class Peg {
     handleCollisions(climber) {
         const { x, width, y, height } = this;
         if (
-            climber.x < x + width - 5 &&
-            climber.x + (climber.width - 12) > x &&
-            climber.y < y + height - 25 &&
-            climber.y + climber.height > y + 10
+            climber.x + climber.width > x &&
+            climber.x < x + width &&
+            climber.y + climber.height > y &&
+            climber.y < y + height
         ) {
-            climber.y_velocity = -1;
+            // Adjust climber's position and velocity to prevent overlapping with the peg
+            climber.y = y - climber.height;
+            climber.y_velocity = 0;
             climber.jumping = false;
         }
     }
+
 }
